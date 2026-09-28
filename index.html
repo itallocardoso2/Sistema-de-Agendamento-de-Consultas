@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agendamento de Consultas — Protótipo (Árvore B)</title>
+<link rel="stylesheet" href="style.css"></head><body><div class="w">
+<h1>Sistema de Agendamento de Consultas Médicas</h1>
+<p class="sub">Protótipo com índices em Árvore B (CPF, CRM e Data) · dados fictícios</p>
+<div class="stats" id="stats"></div>
+<div class="tabs"><button class="on" data-t="b">Buscar consulta</button><button data-t="a">Agendar</button><button data-t="r">Relatório diário</button></div>
+
+<section id="b" class="card">
+ <div class="row">
+  <label>Buscar por<select id="by"><option value="cpf">CPF do paciente</option><option value="crm">CRM do médico</option><option value="data">Data da consulta</option></select></label>
+  <label>Valor<input id="q" placeholder="ex.: 123.456.789-00"></label>
+  <button class="go" id="bgo">Buscar</button>
+ </div>
+ <div class="ex" id="ex"></div>
+ <div id="bres"></div>
+</section>
+
+<section id="a" class="card hide">
+ <div class="row">
+  <label>CPF<input id="acpf" placeholder="000.000.000-00"></label>
+  <label>Nome do paciente<input id="anome"></label>
+  <label>Médico (CRM)<select id="acrm"></select></label>
+  <label>Data<input id="adata" type="date" value="2026-11-10"></label>
+  <label>Hora<input id="ahora" type="time" value="09:00"></label>
+  <button class="go" id="ago">Agendar</button>
+ </div>
+ <div class="msg" id="amsg"></div>
+ <p class="note">O agendamento insere a consulta nos três índices em Árvore B. Depois é só buscar pelo CPF ou CRM informado.</p>
+</section>
+
+<section id="r" class="card hide">
+ <div class="row">
+  <label>Data do relatório<input id="rdata" type="date" value="2026-10-15"></label>
+  <button class="go" id="rgo">Gerar relatório</button>
+ </div>
+ <div id="rres"></div>
+</section>
+</div>
+<script src="script.js"></script>
+</body></html>
